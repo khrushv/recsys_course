@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "recsys"
+version = "0.1.0"
+description = "recsys курс"
+authors = ["Nikita Stepanov"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+tensorboard = "2.13.0"
+tensorflow = "2.13.0"
+pyarrow = "12.0.1"
+polars = "0.18.6"
+tqdm = "4.65.0"
+scipy = "1.11.1"
+scikit-learn = "1.3.0"
+numpy = "=1.24.3"
+Pillow = "10.0.0"
+jupyter = "1.0.0"
+ipykernel = "6.8.0"
+ipython = "8.0.1"
+matplotlib = "^3.9.1"
+pandas = "1.5.0"
+
+qdrant-client = "1.3.1"
+faiss-cpu = "1.7.4"
+redis = "4.6.0"
+implicit = "0.7.0"
+optuna = "^3.6.1"
+gensim = "^4.3.3"
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "avito-pypi"
+url = "https://pypi.k.avito.ru/pypi/"
+default = true

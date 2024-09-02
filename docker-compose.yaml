@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  recsys:
+    container_name: recsys_nsstepanov
+    runtime: nvidia
+    build: .
+    ports:
+      - "8882:8888"
+      - "8883:6006"
+    volumes:
+      - .:/app
+    environment:
+      - JUPYTER_PASSWORD=$JUPYTER_PASSWORD
+    command: /bin/bash -c "cd / && jupyter notebook --allow-root --ip=0.0.0.0 & tensorboard --logdir /data/tensorboard/ --bind_all && sleep infinity"
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+    restart: unless-stopped
